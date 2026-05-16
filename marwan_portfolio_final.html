@@ -744,6 +744,7 @@
     position: relative;
   }
 
+  .cert-preview iframe,
   .cert-preview embed,
   .cert-preview object,
   .cert-preview img {
@@ -902,6 +903,7 @@
     overflow: hidden;
   }
 
+  .cv-embed iframe,
   .cv-embed embed {
     width: 100%;
     height: 100%;
@@ -2197,7 +2199,7 @@
   <div class="certs-grid" id="certsGrid">
     <div class="cert-card" onclick="window.open('Certficate/Nti.pdf','_blank')">
       <div class="cert-preview">
-        <embed src="Certficate/Nti.pdf#page=1&view=FitH" type="application/pdf">
+        <iframe src="Certficate/Nti.pdf#page=1&view=FitH" loading="lazy"></iframe>
       </div>
       <div class="cert-info">
         <div class="cert-issuer">National Telecommunication Institute (NTI)</div>
@@ -2209,7 +2211,7 @@
 
     <div class="cert-card" onclick="window.open('Certficate/certificate-b85xynoteijk-1778859711.pdf','_blank')">
       <div class="cert-preview">
-        <embed src="Certficate/certificate-b85xynoteijk-1778859711.pdf#page=1&view=FitH" type="application/pdf">
+        <iframe src="Certficate/certificate-b85xynoteijk-1778859711.pdf#page=1&view=FitH" loading="lazy"></iframe>
       </div>
       <div class="cert-info">
         <div class="cert-issuer">Anthropic</div>
@@ -2221,7 +2223,7 @@
 
     <div class="cert-card" onclick="window.open('Certficate/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20251211-32-1e1exn.pdf','_blank')">
       <div class="cert-preview">
-        <embed src="Certficate/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20251211-32-1e1exn.pdf#page=1&view=FitH" type="application/pdf">
+        <iframe src="Certficate/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20251211-32-1e1exn.pdf#page=1&view=FitH" loading="lazy"></iframe>
       </div>
       <div class="cert-info">
         <div class="cert-issuer">AWS Academy</div>
@@ -2233,7 +2235,7 @@
 
     <div class="cert-card" onclick="window.open('Certficate/NIVIDA.pdf','_blank')">
       <div class="cert-preview">
-        <embed src="Certficate/NIVIDA.pdf#page=1&view=FitH" type="application/pdf">
+        <iframe src="Certficate/NIVIDA.pdf#page=1&view=FitH" loading="lazy"></iframe>
       </div>
       <div class="cert-info">
         <div class="cert-issuer">NVIDIA</div>
@@ -2279,7 +2281,7 @@
     </div>
 
     <div class="cv-embed">
-      <embed src="Certficate/ATS_CV.pdf#view=FitH" type="application/pdf">
+      <iframe src="Certficate/ATS_CV.pdf#view=FitH" loading="lazy"></iframe>
     </div>
 
     <label for="cvUpload" style="display:block;cursor:pointer">
@@ -2806,7 +2808,7 @@
     const reader = new FileReader();
     reader.onload = (ev) => {
       const data = ev.target.result;
-      const embed = document.querySelector('.cv-embed embed');
+      const embed = document.querySelector('.cv-embed iframe');
       if (embed) embed.src = data;
       const btn = document.querySelector('.cv-header .btn-primary');
       if (btn) btn.href = data;
@@ -2848,7 +2850,7 @@
       const url = URL.createObjectURL(file);
       card.innerHTML = `
         <div class="cert-preview">
-          <embed src="${url}" type="application/pdf">
+          <iframe src="${url}"></iframe>
         </div>
         <div class="cert-info">
           <div class="cert-issuer">Uploaded Certificate</div>
